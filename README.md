@@ -16,7 +16,7 @@ _<div style="text-align: center">Ludo game, on Starknet</div>_
   </tr>
   <tr>
     <td>Documentation</td>
-    <td><a href="https://hackmd.io/m9AjLcheSXClw9ttzHQmVw">https://hackmd.io/m9AjLcheSXClw9ttzHQmVw</a></td>
+    <td><a href="https://book.starkludo.com">https://book.starkludo.com</a></td>
   </tr>
 </table></div>
 
