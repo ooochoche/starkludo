@@ -1,13 +1,9 @@
 {
 	"scripts": {
-		"prepare": "husky",
-		"docs:dev": "vocs dev", 
-        "docs:build": "vocs build", 
-         "docs:preview": "vocs preview"
+		"prepare": "husky"
 	},
 	"dependencies": {
-		"husky": "^9.1.6",
-		"vocs": "1.0.0-alpha.61"
+		"husky": "^9.1.6"
 	},
 	"type": "module",
 	"devDependencies": {
