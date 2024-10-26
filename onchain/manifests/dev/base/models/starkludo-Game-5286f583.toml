@@ -1,6 +1,6 @@
 kind = "DojoModel"
-class_hash = "0x6f661d514e79ee250cef7baa203a0b994f3f9e2dd4cf4fa4ba991f43d11d939"
-original_class_hash = "0x6f661d514e79ee250cef7baa203a0b994f3f9e2dd4cf4fa4ba991f43d11d939"
+class_hash = "0x39fa438bf58ecd4698515fa196c9f617f80896de6c92eeeffadeabe39347936"
+original_class_hash = "0x39fa438bf58ecd4698515fa196c9f617f80896de6c92eeeffadeabe39347936"
 abi = "manifests/dev/base/abis/models/starkludo-Game-5286f583.json"
 tag = "starkludo-Game"
 qualified_path = "starkludo::models::game::game"
@@ -44,6 +44,11 @@ key = false
 [[members]]
 name = "player_red"
 type = "felt252"
+key = false
+
+[[members]]
+name = "invited_players"
+type = "Array<felt252>"
 key = false
 
 [[members]]

@@ -28,7 +28,7 @@
     "items": [
       {
         "type": "function",
-        "name": "contract_name",
+        "name": "name",
         "inputs": [],
         "outputs": [
           {
@@ -228,6 +228,10 @@
         "type": "core::felt252"
       },
       {
+        "name": "invited_players",
+        "type": "core::array::Array::<core::felt252>"
+      },
+      {
         "name": "winner_1",
         "type": "core::felt252"
       },
@@ -350,10 +354,6 @@
             "type": "starkludo::models::game::GameMode"
           },
           {
-            "name": "game_status",
-            "type": "starkludo::models::game::GameStatus"
-          },
-          {
             "name": "player_green",
             "type": "core::felt252"
           },
@@ -407,6 +407,22 @@
       },
       {
         "type": "function",
+        "name": "invite_player",
+        "inputs": [
+          {
+            "name": "game_id",
+            "type": "core::integer::u64"
+          },
+          {
+            "name": "player_username",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
         "name": "join_game",
         "inputs": [
           {
@@ -414,19 +430,15 @@
             "type": "core::integer::u64"
           },
           {
-            "name": "player_color",
+            "name": "player_username",
             "type": "core::felt252"
           },
           {
-            "name": "username",
+            "name": "player_color",
             "type": "core::felt252"
           }
         ],
-        "outputs": [
-          {
-            "type": "starkludo::models::game::Game"
-          }
-        ],
+        "outputs": [],
         "state_mutability": "external"
       }
     ]
