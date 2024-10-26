@@ -463,6 +463,10 @@
         "type": "core::felt252"
       },
       {
+        "name": "invited_players",
+        "type": "core::array::Array::<core::felt252>"
+      },
+      {
         "name": "winner_1",
         "type": "core::felt252"
       },

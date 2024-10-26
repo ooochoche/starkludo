@@ -1,10 +1,10 @@
 [world]
 kind = "WorldContract"
-class_hash = "0x5c4271c8cd454ceb8049d2b0724c99d12c2ef8077fc6ad325b18978f614aab0"
-original_class_hash = "0x5c4271c8cd454ceb8049d2b0724c99d12c2ef8077fc6ad325b18978f614aab0"
+class_hash = "0x6f38d5d9507c5d9546290e1a27e309efe5a9af3770b6cc1627db4a1b90a7dce"
+original_class_hash = "0x6f38d5d9507c5d9546290e1a27e309efe5a9af3770b6cc1627db4a1b90a7dce"
 abi = "manifests/dev/deployment/abis/dojo-world.json"
-address = "0x4e4a8cb96198772361acc30c71d81768bccc6c29501f211b0f0ca7045b194a4"
-transaction_hash = "0x6c8c96163c93a23251256cedd16c15751b44196a7cff29726198f65aba14f70"
+address = "0x238a5a4c57beaf2ed5620512135a4bc8e022cd2d13ae7f2cb13c3f392943676"
+transaction_hash = "0x5125d354079edf077582c91f6fa718e0e5823b5f0a88bde084343e1f04948b9"
 block_number = 3
 seed = "starkludo"
 manifest_name = "dojo-world"
@@ -23,9 +23,9 @@ manifest_name = "dojo-base"
 
 [[contracts]]
 kind = "DojoContract"
-address = "0x7b7ccc529c6d4cd2c857247c9c42ffa098aeb9a3c4718771825e054f98039e3"
-class_hash = "0x4cecefc87acb36b188cec659cfde8d7cbfafaf8684297f7d66cadd573cbfec5"
-original_class_hash = "0x4cecefc87acb36b188cec659cfde8d7cbfafaf8684297f7d66cadd573cbfec5"
+address = "0x72177d869ea3f7ef65ffa20dd6a1fb5e8bcea6ab1e9e622dcf2786b5a12f54b"
+class_hash = "0x455c9caaec12f3dd89460db1c8a467540ca9deb0c7f5fe6e132242fc61524ab"
+original_class_hash = "0x455c9caaec12f3dd89460db1c8a467540ca9deb0c7f5fe6e132242fc61524ab"
 base_class_hash = "0x2427dd10a58850ac9a5ca6ce04b7771b05330fd18f2e481831ad903b969e6b2"
 abi = "manifests/dev/deployment/abis/contracts/starkludo-GameActions-72b46dc4.json"
 reads = []
@@ -35,14 +35,16 @@ tag = "starkludo-GameActions"
 systems = [
     "restart",
     "terminate_game",
+    "invite_player",
+    "join_game",
 ]
 manifest_name = "starkludo-GameActions-72b46dc4"
 
 [[contracts]]
 kind = "DojoContract"
-address = "0x182a153535285af4bf98b00141f6ffe37edd898947e450b6a2c5d54c3b6e178"
-class_hash = "0x23f585a946c3224f0993e7001e132dfc559a7683e520ef4c5beee9a5bc8dd65"
-original_class_hash = "0x23f585a946c3224f0993e7001e132dfc559a7683e520ef4c5beee9a5bc8dd65"
+address = "0x32b88171586f2ecd60f67bee1f3f96a0da55a7a6ab29bfce31ecd57e9d97291"
+class_hash = "0x58f4263a51e5bcb416c0778f52fde01024c12ddf2701389b229ff081997952c"
+original_class_hash = "0x58f4263a51e5bcb416c0778f52fde01024c12ddf2701389b229ff081997952c"
 base_class_hash = "0x2427dd10a58850ac9a5ca6ce04b7771b05330fd18f2e481831ad903b969e6b2"
 abi = "manifests/dev/deployment/abis/contracts/starkludo-PlayerActions-20dad3ac.json"
 reads = []
@@ -57,8 +59,8 @@ manifest_name = "starkludo-PlayerActions-20dad3ac"
 
 [[models]]
 kind = "DojoModel"
-class_hash = "0x6f661d514e79ee250cef7baa203a0b994f3f9e2dd4cf4fa4ba991f43d11d939"
-original_class_hash = "0x6f661d514e79ee250cef7baa203a0b994f3f9e2dd4cf4fa4ba991f43d11d939"
+class_hash = "0x39fa438bf58ecd4698515fa196c9f617f80896de6c92eeeffadeabe39347936"
+original_class_hash = "0x39fa438bf58ecd4698515fa196c9f617f80896de6c92eeeffadeabe39347936"
 abi = "manifests/dev/deployment/abis/models/starkludo-Game-5286f583.json"
 tag = "starkludo-Game"
 qualified_path = "starkludo::models::game::game"
@@ -102,6 +104,11 @@ key = false
 [[models.members]]
 name = "player_red"
 type = "felt252"
+key = false
+
+[[models.members]]
+name = "invited_players"
+type = "Array<felt252>"
 key = false
 
 [[models.members]]
