@@ -51,10 +51,19 @@
 
 
 .layout-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: auto;
   background-color: #0e0121;
-  /* height: 100vh; */
+  min-height: calc(100vh);
+  height: fit-content;
+}
+
+.layout-stretch-lock {
+  width: fit-content;
+  height: fit-content;
 }
 
 .mobile-header {

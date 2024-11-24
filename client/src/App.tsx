@@ -79,8 +79,7 @@ const App = () => {
     if (options.gameIsOngoing) {
       if (options.winners.length === options.playersLength - 1) {
         toast(
-          `The game has ended. Player ${
-            chance[options.winners[0]]
+          `The game has ended. Player ${chance[options.winners[0]]
           } is the winner`
         );
         setGameOptions({
@@ -107,7 +106,8 @@ const App = () => {
       {showMobileResponsiveWarning ? (
         <MobileResponsiveWarning />
       ) : (
-        <StarknetProvider>
+        <>
+          <StarknetProvider>
           <GameContext.Provider
             value={{
               gameState: gameState,
@@ -125,6 +125,7 @@ const App = () => {
                     <FiZap color="yellow" size={20} />
                   </div>
                   <div className="layout-container">
+                    <div className="layout-stretch-lock">
                     <div className="mobile-header">
                       <Header />
                     </div>
@@ -203,14 +204,16 @@ const App = () => {
                         </div>
                       </Col>
                     </Row>
-                    <Footer />
+                    </div>
                   </div>
+                  <Footer />
                 </DiceProvider>
               </ColorProvider>
             </BoardContext.Provider>
           </GameContext.Provider>
           <ToastContainer position="bottom-center" />
-        </StarknetProvider>
+          </StarknetProvider>
+        </>
       )}
     </>
   );
