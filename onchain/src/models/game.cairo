@@ -1,4 +1,3 @@
-use core::num::traits::Zero;
 use starknet::{ContractAddress, get_block_timestamp, contract_address_const};
 
 // Represents the status of the game
@@ -30,7 +29,7 @@ pub enum PiecePosition {
 #[dojo::model]
 pub struct Game {
     #[key]
-    pub id: u64, // Unique id of the game
+    pub id: usize, // Unique id of the game
     pub created_by: ContractAddress, // Address of the game creator
     pub game_status: GameStatus, // Status of the game
     pub game_mode: GameMode, // Mode of the game
@@ -70,7 +69,7 @@ pub struct Game {
 pub trait GameTrait {
     // Create and return a new game
     fn new(
-        id: u64,
+        id: usize,
         created_by: ContractAddress,
         game_mode: GameMode,
         player_red: felt252,
@@ -85,7 +84,7 @@ pub trait GameTrait {
 
 impl GameImpl of GameTrait {
     fn new(
-        id: u64,
+        id: usize,
         created_by: ContractAddress,
         game_mode: GameMode,
         player_red: felt252,
