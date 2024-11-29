@@ -7,7 +7,7 @@ import {
 } from "@starknet-react/core";
 import { useEffect, useMemo, useState } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { useDojo } from "../../dojo/useDojo";
+import { useDojo } from "../../dojo/hooks/useDojo";
 import "../../styles/GameAccount.scss";
 import {
   convertHexToText,
