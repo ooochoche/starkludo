@@ -12,6 +12,10 @@ trait IGameActions<T> {
         player_red: felt252,
         number_of_players: u8
     ) -> usize;
+    fn start(ref self: T);
+    fn join(ref self: T);
+    fn move(ref self: T);
+    fn roll(ref self: T);
 }
 
 #[dojo::contract]
@@ -69,6 +73,14 @@ mod GameActions {
 
             game_id
         }
+
+        fn start(ref self: ContractState) {}
+
+        fn join(ref self: ContractState) {}
+
+        fn move(ref self: ContractState) {}
+
+        fn roll(ref self: ContractState) {}
     }
 
     #[generate_trait]
