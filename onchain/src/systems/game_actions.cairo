@@ -13,16 +13,24 @@ trait IGameActions<T> {
         number_of_players: u8
     ) -> usize;
     fn start(ref self: T);
+
     fn join(ref self: T);
+
     fn move(ref self: T);
+
     fn roll(ref self: T);
+
+    fn get_username_from_address(ref self: T, address: ContractAddress) -> felt252;
+
+    fn get_address_from_username(ref self: T, username: felt252) -> ContractAddress;
 }
 
 #[dojo::contract]
-mod GameActions {
+pub mod GameActions {
     use core::array::ArrayTrait;
-    use super::{IGameActions, Game, GameTrait, GameMode, Player, GameStatus};
     use starknet::{ContractAddress, get_caller_address, get_block_timestamp};
+    use starkludo::models::player::{AddressToUsername, UsernameToAddress};
+    use super::{IGameActions, Game, GameTrait, GameMode, Player, GameStatus};
 
     use dojo::model::{ModelStorage, ModelValueStorage};
     use dojo::event::EventStorage;
@@ -55,10 +63,12 @@ mod GameActions {
             // Get the account address of the caller
             let caller = get_caller_address();
 
+            let caller_username = self.get_username_from_address(caller);
+
             // Create a new game
             let new_game: Game = GameTrait::new(
                 game_id,
-                caller,
+                caller_username,
                 game_mode,
                 player_red,
                 player_blue,
@@ -81,6 +91,24 @@ mod GameActions {
         fn move(ref self: ContractState) {}
 
         fn roll(ref self: ContractState) {}
+
+        fn get_username_from_address(ref self: ContractState, address: ContractAddress) -> felt252 {
+            let mut world = self.world_default();
+
+            let address_map: AddressToUsername = world.read_model(address);
+
+            address_map.username
+        }
+
+        fn get_address_from_username(
+            ref self: ContractState, username: felt252
+        ) -> ContractAddress {
+            let mut world = self.world_default();
+
+            let username_map: UsernameToAddress = world.read_model(username);
+
+            username_map.address
+        }
     }
 
     #[generate_trait]

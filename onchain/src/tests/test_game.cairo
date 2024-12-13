@@ -35,8 +35,13 @@ mod tests {
 
     #[test]
     fn test_world() {
+        let caller = starknet::contract_address_const::<'caller'>();
+
         let ndef = namespace_def();
         let mut world = spawn_test_world([ndef].span());
         world.sync_perms_and_inits(contract_defs());
+
+        let (contract_address, _) = world.dns(@"GameActions").unwrap();
+        let game_action_system = IGameActionsDispatcher { contract_address };
     }
 }

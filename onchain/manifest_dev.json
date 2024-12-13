@@ -1,7 +1,7 @@
 {
   "world": {
-    "class_hash": "0x79d9ce84b97bcc2a631996c3100d57966fc2f5b061fb1ec4dfd0040976bcac6",
-    "address": "0x9550ad629755cc639d2a8f77da22da2ea164288d6e849f0eb307981fa442e",
+    "class_hash": "0x45575a88cc5cef1e444c77ce60b7b4c9e73a01cbbe20926d5a4c72a94011410",
+    "address": "0x114263853155c7f3c4209d140a05b106d9ce7f64f75058e2b3ab81fc72cc372",
     "seed": "starkludo",
     "name": "StarkLudo",
     "entrypoints": [
@@ -92,6 +92,10 @@
           {
             "name": "metadata_uri",
             "type": "core::byte_array::ByteArray"
+          },
+          {
+            "name": "metadata_hash",
+            "type": "core::felt252"
           }
         ]
       },
@@ -1002,6 +1006,11 @@
             "name": "uri",
             "type": "core::byte_array::ByteArray",
             "kind": "data"
+          },
+          {
+            "name": "hash",
+            "type": "core::felt252",
+            "kind": "data"
           }
         ]
       },
@@ -1243,8 +1252,8 @@
   },
   "contracts": [
     {
-      "address": "0x6c6815524f92a29f591609178012b080e946eda109aaec7da6542201b59434",
-      "class_hash": "0x7a6dbf618f4a33804e4f4563652946a9289e7b4a7e998b2e27d2f68b6e173da",
+      "address": "0x6b240e9a9239294ed1d07ff08ee8b1f32d9a2a87c782a7729965e7dabb486a9",
+      "class_hash": "0x6716e4b768301e39402a2fe2171dd9813bad8a82077c5039b8d0643859dcd55",
       "abi": [
         {
           "type": "impl",
@@ -1351,6 +1360,66 @@
               "outputs": [
                 {
                   "type": "core::integer::u32"
+                }
+              ],
+              "state_mutability": "external"
+            },
+            {
+              "type": "function",
+              "name": "start",
+              "inputs": [],
+              "outputs": [],
+              "state_mutability": "external"
+            },
+            {
+              "type": "function",
+              "name": "join",
+              "inputs": [],
+              "outputs": [],
+              "state_mutability": "external"
+            },
+            {
+              "type": "function",
+              "name": "move",
+              "inputs": [],
+              "outputs": [],
+              "state_mutability": "external"
+            },
+            {
+              "type": "function",
+              "name": "roll",
+              "inputs": [],
+              "outputs": [],
+              "state_mutability": "external"
+            },
+            {
+              "type": "function",
+              "name": "get_username_from_address",
+              "inputs": [
+                {
+                  "name": "address",
+                  "type": "core::starknet::contract_address::ContractAddress"
+                }
+              ],
+              "outputs": [
+                {
+                  "type": "core::felt252"
+                }
+              ],
+              "state_mutability": "external"
+            },
+            {
+              "type": "function",
+              "name": "get_address_from_username",
+              "inputs": [
+                {
+                  "name": "username",
+                  "type": "core::felt252"
+                }
+              ],
+              "outputs": [
+                {
+                  "type": "core::starknet::contract_address::ContractAddress"
                 }
               ],
               "state_mutability": "external"
@@ -1477,6 +1546,12 @@
       "selector": "0x72b46dc4acc981e6d5c080d57c5dbf80f68d03d30e7e313dbefb0dc7dfda57",
       "systems": [
         "create",
+        "start",
+        "join",
+        "move",
+        "roll",
+        "get_username_from_address",
+        "get_address_from_username",
         "upgrade"
       ]
     }
@@ -1484,15 +1559,27 @@
   "models": [
     {
       "members": [],
-      "class_hash": "0x6bb67a9f3895827ecdcb59f80061ff7f7a31aad1a56a0e0e2102077a4a3497c",
+      "class_hash": "0x6a2b2efd172ddf91aef9052a2f3323fbdbe7926c3a13232e3212c16adb77692",
+      "tag": "starkludo-AddressToUsername",
+      "selector": "0x46bcca6706bbc9330a7904b0f542d02476bb62ad0c70c6b90ea81d58e8dc48f"
+    },
+    {
+      "members": [],
+      "class_hash": "0xb7e83456a187e72d20536c0b2f72fd0b5a0c08e4f8ccd3ca1e267187b9b1b1",
       "tag": "starkludo-Game",
       "selector": "0x5286f583d42be5bcce55789312382404da27ac52bdd960a67ba99b63a68ef52"
     },
     {
       "members": [],
-      "class_hash": "0x38a76e04682aae619f840f13eae2af30dbbd575c26641b5f0e07c86a776f71",
+      "class_hash": "0x77f5a1e367882a96dca1346c6c14ed372265940d2ed8c4364c9856d46667c67",
       "tag": "starkludo-Player",
       "selector": "0x3bb81cb10e2137629fc500e2adca3a90d3d60ad29a17d2ff43e34e8d5806381"
+    },
+    {
+      "members": [],
+      "class_hash": "0x770b3335e12979b12d534bd4da671d627acd317191687d8f4947c990ad4a91b",
+      "tag": "starkludo-UsernameToAddress",
+      "selector": "0x326bc8787d5a7e6a143aa81aeea2167fe5aae1c5932c497e3049382f8ad132a"
     }
   ],
   "events": [
