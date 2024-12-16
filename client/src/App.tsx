@@ -31,6 +31,8 @@ import { StarkludoSchemaType } from "./dojo/gen/models.gen";
 import { SDK } from "@dojoengine/sdk";
 
 const App = ({ sdk }: { sdk: SDK<StarkludoSchemaType> }) => {
+  console.log("SDK initialized:", sdk);
+
   const [activeWindow, setActiveWindow] = useState("");
   const [showMobileResponsiveWarning, setShowMobileResponsiveWarning] =
     useState(false);
