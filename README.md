@@ -20,23 +20,6 @@ _<div style="text-align: center">Ludo game, on Starknet</div>_
   </tr>
 </table></div>
 
-## Table of Contents
-
-- [What is StarkLudo?](#what-is-starkludo)
-  - [Features](#features)
-  - [How to play](#how-to-play)
-  - [Screenshots](#screenshots)
-  - [Upcoming Feature](#upcoming-feature)
-- [Development](#development)
-  - [Prerequisites](#prerequisites)
-  - [Install tools](#install-tools)
-  - [Build and run StarkLudo](#build-and-run-starkludo)
-    - [Client](#client)
-    - [Onchain](#onchain)
-  - [Run contract tests](#run-contract-tests)
-- [License](#license)
-- [Contributing](#contributing)
-
 ## What is StarkLudo?
 
 StarkLudo is a classic board game enjoyed by people of all ages. It’s a game of chance and strategy, where players race their game pieces around the board to be the first to reach the finish spot.
@@ -45,22 +28,6 @@ At the start of the game, all players are assigned 4 pieces each. The goal is to
 
 The game can be played by either 2, 3 or four people. In each game, there can only be one loser. For example, if the game is played by 4 people, the first 3 players to reach the finish spot are the winners. The player that reaches first gets the first position, the player that reaches second gets the second position, and the third gets the third position.
 
-### Features
-
-- Multiplayer
-- Create multiple user accounts
-- Invite friends
-- Choose no of CPU to match device
-- Player avatar
-- Enhanced user interface
-- Better navigation
-- Beautiful animations
-- Tips and Help guidelines
-- Leaderboard/Ranking
-- Toolbox for personal customizations
-- Tournament mode
-- Rewards for players
-- Improved settings
 
 ### How to play
 
@@ -69,7 +36,7 @@ The game can be played by either 2, 3 or four people. In each game, there can on
 1. Launch the app
 2. Connect Wallet
 3. Choose resume a game or start a new game
-4. Select number of CPU you want to use
+4. Select number of players you want to use
 5. Choose user account
 6. Start game
 
@@ -78,7 +45,7 @@ The game can be played by either 2, 3 or four people. In each game, there can on
 1. Launch the app
 2. Connect Wallet
 3. Choose join a game or start a new game
-4. Select number of CPU you want to use
+4. Select number of players you want to use
 5. You get an invitation code to invite another player
 6. Customize your avatar theme color
 7. Choose user account
@@ -94,11 +61,6 @@ The game can be played by either 2, 3 or four people. In each game, there can on
 ![](./assets/readme-asset/choose-account.png)
 ![](./assets/readme-asset/global-rank.png)
 ![](./assets/readme-asset/setting.png)
-
-### Upcoming Feature
-
-Players will be able to stake to earn when they win.
-![](./assets/readme-asset/stake.png)
 
 ## Development
 
@@ -137,19 +99,6 @@ dojoup --version v1.0.5
 ```
 
 ### Build and run StarkLudo
-
-#### Client
-
-```bash
-# Navigate to the client directory
-cd client
-
-# Install dependencies
-pnpm i
-
-# Run
-pnpm dev
-```
 
 ### Onchain
 
@@ -204,6 +153,21 @@ sozo test -f test_contract_deployment
 > `test_contract_deployment` above is the name of the specific function being tested
 
 > **_For more information about testing, check [Dojo book](https://book.dojoengine.org/framework/testing)_**
+
+
+### Client
+> Please note that Katana and Torii servers needs to be up and running before the client server can run successfully
+
+```bash
+# Navigate to the client directory
+cd client
+
+# Install dependencies
+pnpm i
+
+# Run
+pnpm dev
+```
 
 ## License
 
