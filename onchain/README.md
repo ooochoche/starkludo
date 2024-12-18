@@ -36,7 +36,7 @@ katana --disable-fee --allowed-origins "*"
 sozo build
 
 # Migrate the example
-sozo migrate apply
+sozo migrate
 
 # Start Torii
 torii --world 0x403b5f047b8c4797139e30801e310473d99ca6877d19e0f27506f353f8f70f7 --allowed-origins "*"
